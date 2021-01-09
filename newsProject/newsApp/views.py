@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from newsapi import NewsApiClient
-from decouple import config
+# from decouple import config
 
 # from newsapi.newsapi_clinet import NewsApiClient
 
 
 def index(request):
-    API_KEY = config('API_KEY')
+    API_KEY = 'a0e710735ca74c8286f752391bbf8a40'
     newsapi = NewsApiClient(api_key=API_KEY)
     headLines = newsapi.get_top_headlines(sources='bbc-news')
     articles = headLines['articles']
